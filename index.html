@@ -184,7 +184,7 @@ function Init() {
 }
 
 function Loop() {
-    deltaTime = (new Date() - time) / 1000;
+    deltaTime = (new Date() - time) / 1000 / 4;
     time = new Date();
     Update();
     requestAnimationFrame(Loop);
