@@ -235,6 +235,7 @@ function Start() {
     textoScore = document.querySelector(".score");
     dino = document.querySelector(".dino");
     document.addEventListener("keydown", HandleKeyDown);
+    document.addEventListener("keydown", HandleRestart);
 }
 
 function Update() {
@@ -254,6 +255,12 @@ function Update() {
 function HandleKeyDown(ev){
     if(ev.keyCode == 32){
         Saltar();
+    }
+}
+
+function HandleRestart(ev){
+    if(ev.keyCode == 32 && parado == true){
+        location.reload();
     }
 }
 
@@ -388,10 +395,10 @@ function GanarPuntos() {
 }
 
 function GameOver() {
-    location.reload();
+    //location.reload();
     //Init();
-    //Estrellarse();
-    //gameOver.style.display = "block";
+    gameOver.style.display = "block";
+    Estrellarse();
 }
 
 function DetectarColision() {
